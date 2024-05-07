@@ -33,7 +33,7 @@ A mini project to test out the MERN stack from https://www.mongodb.com/resources
 
 3. Configure environment variables:
 
-   - Create a `.env` file in the `backend` directory.
+   - Create a `.env` file in the `server` directory.
    - Define necessary environment variables, such as database connection strings and API keys.
 
 4. Start the backend server:
