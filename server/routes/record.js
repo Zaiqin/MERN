@@ -22,14 +22,23 @@ router.get("/", async (req, res) => {
 
 // This section will help you get a single record by id
 router.get("/:id", async (req, res) => {
-  console.log("b")
-  let collection = await db.collection("records");
-  let query = { _id: new ObjectId(req.params.id) };
-  let result = await collection.findOne(query);
-  console.log("bsdf")
-  if (!result) res.send("Not found").status(404);
-  else res.send(result).status(200);
+  console.log("Requesting record with ID:", req.params.id);
+  try {
+    let collection = await db.collection("records");
+    let query = { _id: new ObjectId(req.params.id) };
+    let result = await collection.findOne(query);
+    if (!result) {
+      console.log("Record not found");
+      return res.status(404).send("Not found");
+    }
+    console.log("Record found:", result);
+    res.status(200).send(result);
+  } catch (error) {
+    console.error("Error fetching record:", error);
+    res.status(500).send("Error fetching record");
+  }
 });
+
 
 // This section will help you create a new record.
 router.post("/", async (req, res) => {
