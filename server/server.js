@@ -9,9 +9,18 @@ app.use(cors());
 app.use(express.json());
 app.use("/api/record", records); // Route all API endpoints with /api/records to records router
 
+const options = {
+  origin: "http://localhost:5173"
+}
+
 app.get("/test", async (req, res) => {
   console.log("testing main")
   res.send("testing main heres").status(200);
+});
+
+app.get("/abc", cors(options), async (req, res) => {
+  console.log("testing cors")
+  res.send("testing cors heres").status(200);
 });
 
 // start the Express server
