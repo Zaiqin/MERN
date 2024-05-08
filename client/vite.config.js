@@ -1,12 +1,13 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import envCompatible from "vite-plugin-env-compatible"
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import { loadEnv } from 'vite';
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  envPrefix: "REACT_APP_",
-  plugins: [
-    envCompatible(),
-    react()
-  ],
-})
+export default ({ mode }) => {
+  // Load app-level env vars to node-level env vars.
+  process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
+
+  return defineConfig({
+    plugins: [react()],
+  });
+};
