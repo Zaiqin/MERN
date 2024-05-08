@@ -41,6 +41,8 @@ export default function RecordList() {
   // This method fetches the records from the database.
   useEffect(() => {
     async function getRecords() {
+      try { console.log(import.meta.env) } catch {}
+      try { console.log(process.env) } catch {}
       const response = await fetch(`https://mern-server-theta.vercel.app/api/record`);
       if (!response.ok) {
         const message = `An error occurred: ${response.statusText}`;
