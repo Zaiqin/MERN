@@ -5,7 +5,12 @@ import records from "./routes/record.js";
 const PORT = process.env.PORT || 5050;
 const app = express();
 
-app.use(cors());
+// Allow requests from your Vercel-hosted frontend
+const corsOptions = {
+  origin: 'https://mern-client-eight-nu.vercel.app/'
+};
+app.use(cors(corsOptions));
+
 app.use(express.json());
 app.use("/api/record", records); // Route all API endpoints with /api/records to records router
 
