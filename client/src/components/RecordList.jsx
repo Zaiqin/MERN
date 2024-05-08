@@ -43,13 +43,13 @@ export default function RecordList() {
     async function getRecords() {
       try { 
         console.log("trying 1")
-        console.log(import.meta.env) 
+        console.log("abc1"+import.meta.env)
       } catch {
         console.log("caught import.meta.env")
       }
       try { 
         console.log("trying 2")
-        console.log(process.env) 
+        console.log("abc2"+process.env.VITE_REACT_APP_SERVER_URI);
       } catch {
         console.log("caught process.env")
       }
