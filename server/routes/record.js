@@ -19,6 +19,12 @@ router.get("/", async (req, res) => {
 });
 
 // This section will help you get a single record by id
+router.get("/test", async (req, res) => {
+  console.log("testing 123")
+  res.send("testing").status(222);
+});
+
+// This section will help you get a single record by id
 router.get("/:id", async (req, res) => {
   let collection = await db.collection("records");
   let query = { _id: new ObjectId(req.params.id) };
