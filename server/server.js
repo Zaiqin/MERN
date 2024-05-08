@@ -7,7 +7,7 @@ const app = express();
 
 // Allow requests from your Vercel-hosted frontend
 const corsOptions = {
-  origin: 'https://mern-client-eight-nu.vercel.app/'
+  origin: 'https://mern-client-eight-nu.vercel.app'
 };
 app.use(cors(corsOptions));
 
