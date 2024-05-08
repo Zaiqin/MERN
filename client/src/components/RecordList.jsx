@@ -41,19 +41,7 @@ export default function RecordList() {
   // This method fetches the records from the database.
   useEffect(() => {
     async function getRecords() {
-      try { 
-        console.log("trying 1")
-        console.log("abc1"+import.meta.env)
-      } catch {
-        console.log("caught import.meta.env")
-      }
-      try { 
-        console.log("trying 2")
-        console.log("abc2"+process.env.VITE_REACT_APP_SERVER_URI);
-      } catch {
-        console.log("caught process.env")
-      }
-      const response = await fetch(`https://mern-server-theta.vercel.app/api/record`);
+      const response = await fetch(`${process.env.VITE_REACT_APP_SERVER_URI}/api/record`);
       if (!response.ok) {
         const message = `An error occurred: ${response.statusText}`;
         console.error(message);
@@ -68,7 +56,7 @@ export default function RecordList() {
 
   // This method will delete a record
   async function deleteRecord(id) {
-    await fetch(`https://mern-server-theta.vercel.app/api/record/${id}`, {
+    await fetch(`${process.env.VITE_REACT_APP_SERVER_URI}/api/record/${id}`, {
       method: "DELETE",
     });
     const newRecords = records.filter((el) => el._id !== id);
