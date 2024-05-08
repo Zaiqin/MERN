@@ -5,9 +5,20 @@ import records from "./routes/record.js";
 const PORT = process.env.PORT || 5050;
 const app = express();
 
-app.use(cors({
-  origin: 'https://mern-client-eight-nu.vercel.app'
-}));
+// Configure CORS dynamically
+const corsOptions = {
+  origin: (origin, callback) => {
+    // Check if the origin is allowed (you can implement your logic here)
+    const allowedOrigins = ['https://mern-client-eight-nu.vercel.app', 'http://localhost:5173'];
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use("/api/record", records); // Route all API endpoints with /api/records to records router
 
