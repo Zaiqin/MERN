@@ -11,7 +11,7 @@ app.use("/api/record", records); // Route all API endpoints with /api/records to
 
 app.get("/test", async (req, res) => {
   console.log("testing main")
-  res.send("testing main here").status(200);
+  res.send("testing main heres").status(200);
 });
 
 // start the Express server
