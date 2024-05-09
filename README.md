@@ -34,7 +34,7 @@ MERN is built using a stack of modern technologies, including:
 ![Vercel](https://img.shields.io/badge/Vercel-black?style=for-the-badge&logo=vercel)
 - **Node.js and Express.js**: Powering the backend server and API development.
 - **MongoDB**: A NoSQL database used for storing and managing employee data.
-- **Vercel**: Used for hosting the backend server and ensuring reliable deployment.
+- **Vercel**: Used for hosting both the frontend and backend server and ensuring reliable deployment.
 
 ## Setup Instructions
 
