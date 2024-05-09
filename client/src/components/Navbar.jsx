@@ -5,7 +5,7 @@ export default function Navbar() {
     <div>
       <nav className="flex justify-between items-center mb-6">
         <NavLink to="/">
-          <img alt="React logo" className="h-12 inline mr-3" src="https://www.seekpng.com/png/detail/80-803597_io-is-compatible-with-all-javascript-frameworks-and.png"></img>
+          <img alt="React logo" className="h-12 inline mr-3" src="https://logos-world.net/wp-content/uploads/2023/08/React-Symbol.png"></img>
           <img alt="Vite logo" className="h-12 inline mr-3" src="https://media.dev.to/cdn-cgi/image/width=1600,height=900,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fh4jbiijckmk65al45e6x.jpg"></img>
           <img alt="Tailwind logo" className="h-12 inline mr-3" src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-ar21.png"></img>
           <img alt="Nodejs logo" className="h-12 inline mr-3" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1200px-Node.js_logo.svg.png"></img>
